@@ -8,28 +8,20 @@ import java.io.IOException;
  */
  
 /**
- * @author Ben
+ * @author bmgulan
  *
  */
-
 public class Graph {
-
-
-static int [][]adj;
-        static int n;
-        static int maxCliqueSize;
-        static int []clique;
-        static String file = "graphsDense.txt";
- 
-        /**
-         * @param args
-         */
-        public static void main(String[] args) {
-                readGraph();
-               
+        int [][]adj;
+        int n;
+        int maxCliqueSize;
+        int []clique;
+        String file = "graphsDense.txt";
+       
+        Graph() {
         }
        
-        static void readGraph() {
+        public void readGraph() {
                 char curr;
                 String num = null;
                 try {
@@ -70,13 +62,15 @@ static int [][]adj;
                 }
         }
        
-        static int getNext(BufferedReader br) throws IOException {
+        private int getNext(BufferedReader br) throws IOException {
                 char c = (char) br.read();
                 int x = Character.getNumericValue(c);
                 return x;
         }
-    public static void main(String[] args) {
-        System.out.println("lol");
-    }
-
+       
+        public static void main(String[] args) {
+                Graph graph = new Graph();
+                graph.readGraph();
+               
+        }
 }
